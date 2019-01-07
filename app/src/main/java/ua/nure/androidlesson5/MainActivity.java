@@ -1,6 +1,7 @@
 package ua.nure.androidlesson5;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnEnter;
     private Button btnTwo;
+    private Button btn_page2;
 
     private RatingBar ratingBar;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnEnter = findViewById(R.id.btn_enter);
         btnTwo = findViewById(R.id.btn_two);
+        btn_page2 = findViewById(R.id.btn_page2);
 
         ratingBar = findViewById(R.id.ratingBar);
 
@@ -82,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
                         AlertDialog alert = a_builder.create();
                         alert.setTitle("Close app");
                         alert.show();
+                    }
+                }
+        );
+
+        btn_page2.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(".SecondActivity");
+                        startActivity(intent);
                     }
                 }
         );
